@@ -144,7 +144,7 @@ function parseDom(ele){
  */
   function removeAll(){
     var style = document.getElementById(SETTINGS.stylesheetId),
-      lines = document.getElementsByClassName(SETTINGS.class),
+      lines = document.getElementsByClassName(SETTINGS.className),
       len = lines.length,
       cur;
 
