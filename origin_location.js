@@ -1,8 +1,14 @@
 /**
- * originLocation
- * @param {string} ele     OPTION the node to query.
+ * @module originLocation
+ * @description Deeper descriptions of what this thing is supposed to do, I guess?
+ * @param {string} [ele]   The node to query.
  *                         returns false, clears existing
  *                         if blank
+ * @param {object} [config] Configuration options.
+ * @author Matthew Smith
+ * @version 0.0.1
+ * @todo Account for vendor-prefixed origin locations.
+ * @todo Finish config options.
  */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -16,10 +22,6 @@
 }(this, function () {
   'use strict';
   function originLocation(ele, config){
-  //Todo:
-  //Account for off-screen — particularly negative values.
-  //Account for vendor prefixed
-  //Add config options
   var CONST = {
       STYLESHEETID : 'originLocationStyles',
       CLASS : 'originLocation',
@@ -124,6 +126,13 @@
     sheet.insertRule('.'+CONST.CLASSY + '{'+yStyles.join(';')+'}',3);
   }
 
+/**
+ * generateLines: Append crosshairs to DOM.
+ * @memberof originLocation
+ * @function
+ * @todo  User-selectable dom elements?
+ *
+*/
   function generateLines(){
     var frag = document.createDocumentFragment(),
       x = document.createElement('div'),
